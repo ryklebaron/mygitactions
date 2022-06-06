@@ -1,5 +1,6 @@
 name: Super-Linter
-on: push #Flow starts when code is pushed
+
+on: push
 
 jobs:
   super-lint:
@@ -7,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2			
-    
-      - name: Runs Super-Linter
+        uses: actions/checkout@v2
+	
+      - name: Run Super-Linter
         uses: github/super-linter@v3
 	env:
 	  DEFAULT_BRANCH: main
-	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
